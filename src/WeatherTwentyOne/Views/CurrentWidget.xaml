@@ -19,7 +19,7 @@
         HorizontalOptions="Center"
         class="Title1" />
 
-    <Border BackgroundColor="{StaticResource Primary}"
+    <Border BackgroundColor="{DynamicResource Primary}"
             Stroke="Transparent"
             StrokeThickness="1"
             HorizontalOptions="Center"
@@ -29,10 +29,10 @@
             <RoundRectangle CornerRadius="60"/>
         </Border.StrokeShape>
         <Label
-                    Text="Clear"
-                    TextColor="{StaticResource White}"
-                    HorizontalOptions="Center"
-                    FontSize="18"/>
+            Text="Clear"
+            TextColor="{DynamicResource OnPrimary}"
+            HorizontalOptions="Center"
+            FontSize="18"/>
     </Border>
     
 

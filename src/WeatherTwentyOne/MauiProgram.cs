@@ -1,4 +1,5 @@
-﻿using Microsoft.Maui.LifecycleEvents;
+﻿using MaterialColorUtilities.Maui;
+using Microsoft.Maui.LifecycleEvents;
 using WeatherTwentyOne.Pages;
 using WeatherTwentyOne.ViewModels;
 
@@ -11,6 +12,7 @@ public static class MauiProgram
         var builder = MauiApp.CreateBuilder();
         builder
             .UseMauiApp<App>()
+            .UseMaterialDynamicColors()
             .ConfigureFonts(fonts => {
                 fonts.AddFont("fa-solid-900.ttf", "FontAwesome");
                 fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
@@ -44,9 +46,6 @@ public static class MauiProgram
 #endif
         services.AddSingleton<HomeViewModel>();
         services.AddSingleton<HomePage>();
-
-
-
 
         return builder.Build();
     }

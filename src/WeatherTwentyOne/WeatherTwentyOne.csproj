@@ -53,6 +53,10 @@
 	  </Content>
 	</ItemGroup>
 
+	<ItemGroup>
+	  <PackageReference Include="MaterialColorUtilities.Maui" Version="0.1.1" />
+	</ItemGroup>
+
    <ProjectExtensions><VisualStudio><UserProperties XamarinHotReloadGenericExceptionInfoBarWeatherTwentyOneHideInfoBar="True" /></VisualStudio></ProjectExtensions>
 
 </Project>
