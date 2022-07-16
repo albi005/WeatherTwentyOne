@@ -12,7 +12,7 @@ public static class MauiProgram
         var builder = MauiApp.CreateBuilder();
         builder
             .UseMauiApp<App>()
-            .UseMaterialDynamicColors()
+            .UseMaterialDynamicColors<ColorService>()
             .ConfigureFonts(fonts => {
                 fonts.AddFont("fa-solid-900.ttf", "FontAwesome");
                 fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
@@ -20,16 +20,6 @@ public static class MauiProgram
             });
         builder.ConfigureLifecycleEvents(lifecycle => {
 #if WINDOWS
-        //lifecycle
-        //    .AddWindows(windows =>
-        //        windows.OnNativeMessage((app, args) => {
-        //            if (WindowExtensions.Hwnd == IntPtr.Zero)
-        //            {
-        //                WindowExtensions.Hwnd = args.Hwnd;
-        //                WindowExtensions.SetIcon("Platforms/Windows/trayicon.ico");
-        //            }
-        //        }));
-
             lifecycle.AddWindows(windows => windows.OnWindowCreated((del) => {
                 del.ExtendsContentIntoTitleBar = true;
             }));

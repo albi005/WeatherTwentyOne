@@ -2,31 +2,28 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:m="clr-namespace:WeatherTwentyOne.Models"
+    xmlns:v="clr-namespace:WeatherTwentyOne.Views"
     x:Class="WeatherTwentyOne.Views.WidgetsPanel"
     ColumnDefinitions="1,*">
     <Grid.Resources>
         <DataTemplate x:Key="MetricTemplate">
-            <Border
+            <Frame
                 HeightRequest="154"
-                WidthRequest="150"
                 x:DataType="m:Metric"
-                Stroke="Transparent"
+                CornerRadius="32"
+                Padding="0"
                 BackgroundColor="{DynamicResource Surface1}">
-                <Border.StrokeShape>
-                    <RoundRectangle CornerRadius="40" />
-                </Border.StrokeShape>
                 <Grid
-                    Margin="15"
+                    Padding="16"
                     ColumnDefinitions="*"
                     RowDefinitions="*">
                     <Grid.GestureRecognizers>
                         <TapGestureRecognizer NumberOfTapsRequired="2" Tapped="OnTapped" />
                     </Grid.GestureRecognizers>
-                    <Image
+                    <v:FluentIcon
                         Source="{Binding Icon}"
                         WidthRequest="45"
                         HeightRequest="45"
-                        Aspect="AspectFit"
                         VerticalOptions="Start"
                         HorizontalOptions="End" />
 
@@ -39,13 +36,14 @@
                         <Label Text="{Binding WeatherStation}" class="SubContent" />
                     </StackLayout>
                 </Grid>
-            </Border>
+            </Frame>
         </DataTemplate>
     </Grid.Resources>
 
     <CollectionView
         Grid.Column="1"
-        Margin="15"
+        Margin="8"
+        VerticalScrollBarVisibility="Never"
         ItemSizingStrategy="MeasureFirstItem"
         ItemTemplate="{StaticResource MetricTemplate}">
         <CollectionView.ItemsLayout>
@@ -59,37 +57,37 @@
             <x:Array Type="{x:Type m:Metric}">
                 <m:Metric
                     Title="Humidity"
-                    Icon="humidity_icon.png"
+                    Icon="humidity"
                     WeatherStation="Pond Elementary"
                     Value="78%" />
                 <m:Metric
                     Title="Rain"
-                    Icon="rain_icon.png"
+                    Icon="rain"
                     WeatherStation="Pond Elementary"
                     Value="0.2in" />
                 <m:Metric
                     Title="Chance of Rain"
-                    Icon="umbrella_icon.png"
+                    Icon="umbrella"
                     WeatherStation="Pond Elementary"
                     Value="2%" />
                 <m:Metric
                     Title="Wind"
-                    Icon="wind_icon.png"
+                    Icon="wind"
                     WeatherStation="Pond Elementary"
                     Value="9mph" />
                 <m:Metric
                     Title="Humidity"
-                    Icon="humidity_icon.png"
+                    Icon="humidity"
                     WeatherStation="City Hall"
                     Value="78%" />
                 <m:Metric
                     Title="Rain"
-                    Icon="rain_icon.png"
+                    Icon="rain"
                     WeatherStation="Rockwood Reservation"
                     Value="0.2in" />
                 <m:Metric
                     Title="Chance of Rain"
-                    Icon="umbrella_icon.png"
+                    Icon="umbrella"
                     WeatherStation="County Library"
                     Value="2%" />
             </x:Array>
@@ -98,7 +96,7 @@
 
     </CollectionView>
     <BoxView
-        BackgroundColor="{DynamicResource Outline}"
+        BackgroundColor="{DynamicResource SurfaceVariant}"
         WidthRequest="1"
         HorizontalOptions="Start" />
 

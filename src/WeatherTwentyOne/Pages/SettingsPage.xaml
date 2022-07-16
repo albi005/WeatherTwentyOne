@@ -72,10 +72,9 @@
         <ScrollView Grid.Row="1" Margin="{OnIdiom Phone=15, Default=25}">
             <VerticalStackLayout Spacing="8">
                 <VerticalStackLayout Spacing="8">
-                    <Image
+                    <v:FluentIcon
                         HeightRequest="115"
-                        Aspect="AspectFit"
-                        Source="fluent_weather_moon_16_filled.png" />
+                        Source="moon" />
                     <Label
                         Text="{Binding Temperature}"
                         HorizontalOptions="Center"

@@ -95,7 +95,7 @@
     <Style TargetType="TabBar">
         <Setter Property="Shell.TabBarBackgroundColor" Value="{DynamicResource Surface2}" />
         <Setter Property="Shell.TabBarTitleColor" Value="{DynamicResource OnSurface}" />
-        <Setter Property="Shell.TabBarUnselectedColor" Value="Blue" />
+        <Setter Property="Shell.TabBarUnselectedColor" Value="{DynamicResource OnSurfaceVariant}" />
         <Setter Property="Shell.TabBarForegroundColor" Value="Red" />
     </Style>
 

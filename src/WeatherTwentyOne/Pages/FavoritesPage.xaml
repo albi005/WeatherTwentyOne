@@ -17,7 +17,7 @@
                 x:DataType="c:Location"
                 BackgroundColor="{DynamicResource Surface1}">
                 <Grid RowDefinitions="42,40,*" Padding="20">
-                    <Image
+                    <v:FluentIcon
                         Source="{Binding Icon}"
                         WidthRequest="36"
                         HeightRequest="36"
@@ -38,8 +38,8 @@
                         Grid.Row="2"
                         Spacing="10"
                         VerticalOptions="End">
-                        <Image
-                            Source="solid_umbrella.png"
+                        <v:FluentIcon
+                            Source="umbrella"
                             VerticalOptions="Center"
                             WidthRequest="20"
                             HeightRequest="20" />
@@ -54,8 +54,8 @@
                         Spacing="10"
                         HorizontalOptions="End"
                         VerticalOptions="End">
-                        <Image
-                            Source="solid_humidity.png"
+                        <v:FluentIcon
+                            Source="humidity"
                             VerticalOptions="Center"
                             WidthRequest="20"
                             HeightRequest="20" />
@@ -79,8 +79,8 @@
                 Spacing="18"
                 Padding="{OnIdiom Phone='15,15,15,15',
                                   Default='25,25,25,0'}">
-                <Image
-                    Source="search_icon.png"
+                <v:FluentIcon
+                    Source="search"
                     VerticalOptions="Center"
                     HeightRequest="22"
                     WidthRequest="22" />
